@@ -23,7 +23,7 @@ def test_data_convert_help(run: Callable[..., RunResult]):
     output = run("--help")
 
     help_text = """usage: rasa [-h] [--version]
-            {init,run,shell,train,interactive,test,visualize,data,export,x}
+            {init,run,shell,train,interactive,test,visualize,data,export,x,plugins}
             ..."""
 
     lines = help_text.split("\n")
