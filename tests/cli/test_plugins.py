@@ -32,7 +32,9 @@ def _install_plugin(
     plugin_path.write_text(script_content)
     plugin_path.chmod(0o777)
 
-    monkeypatch.setenv("PATH", f"{os.getenv('PATH')}:{str(plugin_directory)}")
+    monkeypatch.setenv(
+        "PATH", f"{os.getenv('PATH')}{os.pathsep}{str(plugin_directory)}"
+    )
 
 
 def test_plugin_execution(
